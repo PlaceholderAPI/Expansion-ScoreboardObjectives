@@ -58,7 +58,7 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 		if (identifier.startsWith("score_")) {
 			identifier = identifier.replace("score_", "");
 			String[] fields = identifier.split("\\}_", 2);
-			fields[0] = fields[0].replaceAll("\\{", "");
+			fields[0] = fields[0].replaceAll("\\{", "").replaceAll("\\}", "");
 			String entry = "";
 			if (fields.length > 1) {
 				fields[1] = fields[1].replaceAll("\\{", "").replaceAll("\\}", "");
@@ -68,7 +68,7 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 			} else {
 				return "PNF";
 			}
-			String objName = fields[1];
+			String objName = fields[0];
 			Scoreboard board = Bukkit.getScoreboardManager().getMainScoreboard();
 			Objective obj = board.getObjective(objName);
 			Score score = obj.getScore(entry);
@@ -95,7 +95,7 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 			} else {
 				return "PNF";
 			}
-			String objName = fields[1];
+			String objName = fields[0];
 			Scoreboard board = Bukkit.getScoreboardManager().getMainScoreboard();
 			Objective obj = board.getObjective(objName);
 			Score score = obj.getScore(player);

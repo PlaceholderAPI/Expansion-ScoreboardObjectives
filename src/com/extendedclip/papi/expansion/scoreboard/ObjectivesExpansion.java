@@ -79,7 +79,7 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 		if (identifier.startsWith("scorep_")) {
 			identifier = identifier.replace("scorep_", "");
 			String[] fields = identifier.split("\\}_", 2);
-			fields[0] = fields[0].replaceAll("\\{", "");
+			fields[0] = fields[0].replaceAll("\\{", "").replaceAll("\\}", "");
 			String player = "";
 			if (fields.length > 1) {
 				fields[1] = fields[1].replaceAll("\\{", "").replaceAll("\\}", "");

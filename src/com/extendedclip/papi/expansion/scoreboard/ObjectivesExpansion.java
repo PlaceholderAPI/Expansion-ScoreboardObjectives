@@ -18,26 +18,27 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 		return true;
 	}
 	
+	@Override
 	public String getAuthor() {
 		return "L3thalBunny";
 	}
 	
+	@Override
 	public String getName() {
 		return "ScoreboardObjectives";
 	}
 	
+	@Override
 	public String getIdentifier() {
 		return "objective";
 	}
 	
-	public String getPlugin() {
-		return null;
-	}
-	
+	@Override
 	public String getVersion() {
 		return "3.3.1";
 	}
 	
+	@Override
 	public List<String> getPlaceholders() {
 		List<String> list = new ArrayList<String>();
 		
@@ -54,6 +55,7 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 		return "%" + getIdentifier() + "_" + str + "%";
 	}
 	
+	@Override
 	public String onPlaceholderRequest(Player p, String identifier) {
 		if (identifier.startsWith("score_")) {
 			identifier = identifier.replace("score_", "");

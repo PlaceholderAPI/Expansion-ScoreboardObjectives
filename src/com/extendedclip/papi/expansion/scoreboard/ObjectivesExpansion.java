@@ -56,7 +56,7 @@ public class ObjectivesExpansion extends PlaceholderExpansion {
 	}
 	
 	@Override
-	public String onPlaceholderRequest(Player p, String identifier) {
+	public String onRequest(final OfflinePlayer p, String identifier) {
 		if (identifier.startsWith("score_")) {
 			identifier = identifier.replace("score_", "");
 			String[] fields = identifier.split("\\}_", 2);
